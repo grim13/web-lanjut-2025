@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 // GET, POST, PUT, DELETE, PATCH
 
@@ -33,3 +34,6 @@ Route::post('/biodata', function() {
     $semester = (($tahun_terakhir - $tahun_angkatan) * 2) + 1;
     return view('biodata.hasil', compact('nama', 'nim', 'jenis_kelamin', 'angkatan', 'semester') );
 });
+
+Route::get('/users', 
+[UserController::class, 'allUsers']);

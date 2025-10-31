@@ -19,6 +19,6 @@ class UserController extends Controller
                 ])
                 ->join('roles', 'users.role_id', '=', 'roles.id')
                 ->get();
-        return $users;
+        return view('user.index', compact('users'));
     }
 }
